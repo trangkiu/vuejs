@@ -1,0 +1,18 @@
+#zombie{
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  background: url(zombie.jpg) center no-repeat;
+  background-size: 80%;
+}
+
+#zombie-health{
+  width:400px;
+  border: 2px solid yellow;
+  margin: 0 auto 20px auto;
+}
+
+#zombie-health div{
+  height: 20px;
+  background: red;
+}
