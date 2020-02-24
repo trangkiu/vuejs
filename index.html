@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>VueJs tutorial</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="vue-app">
+      <h1>{{greet()}}</h1>
+      <p>{{name}} is {{desc}}</p>
+      <h1>{{greetData('night')}}</h1>
+
+      <h1> Data binding : v-bind </h1>
+      <a v-bind:href="website"> Google.com </a>
+
+      <p>Bind the whole website tag into DOM v-html  </p>
+      <p v-html="websiteTag" ></p>
+
+      <h1> Event </h1>
+      <button @click.once = "age++">Add a year</button>
+      <button v-on:click = "age--">Subtract a year</button>
+
+      <button v-on:click = "add(1)">Add using method</button>
+      <button v-on:click = "subtract(1)">Subtract using method</button>
+      <p> double click event </p>
+      <button v-on:dblclick = "add(5)">Add db click</button>
+      <button v-on:dblclick = "subtract(5)">Subtract db click</button>
+      <p> My age is {{age}}</p>
+
+      <div id="canvas" v-on:mousemove = "updateXY"> {{x}},{{y}}</div>
+
+      <a v-on:click.prevent="click"href="http://www.youtube.com">Youtube website </a>
+
+    </div>
+
+    <div id="vue-event">
+      <h1> Keyboard event</h1>
+      <label > Name : </label>
+      <input id="name1" type="text" v-on:keyup.alt.enter="logName" v-model="name" />
+      <p>{{name}}</p>
+      <label> Age : </label>
+      <input type="text" v-on:keyup.enter= "logAge"/>
+      <p>{{age}}</p>
+    </div>
+
+
+    <div id="vue-css">
+      <h1> Dynamic Css</h1>
+      <h2 > Example 1, object is put inside {}, true if we want to add that class </h2>
+      <div v-bind:class="{available:available}" v-on:click="available = !available">
+        <span>Kiu</span>
+      </div>
+
+
+      <h2 > we can define these class in computed property</h2>
+      <div v-bind:class="compClasses">
+        <button v-on:click="nearby = !nearby">Toggle nearby</button>
+        <button v-on:click="available = !available">Toggle available</button>
+        <span>Xinh</span>
+      </div>
+
+    </div>
+
+    <div id = "vue-conditional">
+      <h1> Conditionals </h1>
+      <button v-on:click="error = !error">Toggle error</button>
+      <button v-on:click="sucess = !sucess">Toggle sucess</button>
+      <p> if will clear the element completely out of DOM</p>
+      <p v-if="error">show when error is true</p>
+      <p v-else-if="sucess">show when sucess is true and error is false</p>
+      <p>show method will set the display = none if false</p>
+      <p v-show="error">show when error is true (show)</p>
+      <p v-show="sucess">show when sucess is true and error is false (show)</p>
+    </div>
+
+
+    <div id = "vue-loop">
+      <h1> Loop </h1>
+      <ul>
+        <li v-for="char in characters">{{char}}</li>
+      </ul>
+      <ul>
+        <li v-for="(ninja,index) in ninjas">{{index}}. name : {{ninja['name']}} ,age: {{ninja.age}} </li>
+      </ul>
+
+      <p> loop throught object </p>
+      <template v-for="ninja in ninjas">
+        <div v-for="(val,key) in ninja">key is {{key}}: {{val}}</div>
+      </template>
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
