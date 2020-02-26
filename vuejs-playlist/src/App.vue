@@ -7,10 +7,12 @@
 </template>
 
 <script>
-// register locally
-
+import Kiu from './kiu.vue'
 
 export default {
+  components:{
+  'kiu':Kiu
+  },
 
   data () {
     return {
