@@ -91,17 +91,24 @@
       </template>
    </div>
 
+   <h1>Multiple Vue</h1>
+   <div id="vue-one">
+     <p>{{title}}</p>
+     <p>{{greeting}}</p>
+     <greeting></greeting>
+   </div>
+
+   <div id="vue-two">
+     <p>{{title}}</p>
+     <p>{{greeting}}</p>
+     <button v-on:click="changeTitle()"> Change app 1 title </button>
+     <greeting></greeting>
+   </div>
 
 
 
 
-
-
-
-
-
-
-
+    <script type="text/javascript" src="multipleInstance.js"></script>
     <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
