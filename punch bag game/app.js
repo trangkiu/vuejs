@@ -1,4 +1,4 @@
-new Vue{
+new Vue({
   el:"#vue-app",
   data:{
     health: 100,
@@ -19,4 +19,10 @@ new Vue{
 
   }
 
-};
+});
+
+let btn = document.getElementById("shot");
+btn.addEventListener("click",function(){
+  let snd = new Audio("shotgun.wav");
+  snd.play();
+});

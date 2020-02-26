@@ -72,6 +72,7 @@ new Vue({
   },
   computed:{
     // put method here if we one it run only when its call
+    // computed properties can be call by name without ()
   }
 });
 

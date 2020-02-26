@@ -10,17 +10,18 @@
   <body>
     <div id="vue-app">
       <!--zombie image -->
-      <div id="zombie"></div>
+      <div id="zombie" v-bind:class="{burst:ended}"></div>
 
       <!--zombie health -->
       <div id="zombie-health">
         <div v-bind:style="{width: health +'%'}"></div>
       </div>
 
+
       <!--game control -->
       <div id="control"  class="row mx-md-n5">
         <div class="col px-md-5">
-      <button class="btn btn-outline-success btn-block" v-on:click="punch" v-show="!ended">Shot </button>
+      <button class="btn btn-outline-success btn-block" v-on:click="punch" v-show="!ended" id="shot">Shot </button>
         </div>
         <div class="col px-md-5">
       <button class="btn btn-outline-danger btn-block" v-on:click="restart">Restart</button>
