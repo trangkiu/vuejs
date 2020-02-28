@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import {bus} from "../main.js";
 export default {
   props:{
     title:{
@@ -17,6 +18,12 @@ export default {
     return{
       copyright:'Coppyright 2020 Kiu ltd.'
     }
+  },
+  // anything inside created will be fired at the beginning
+  created(){
+    bus.$on('titleChange',(data) => { // call back function that take data we pass
+      this.title = data;
+    });
   }
 
 }

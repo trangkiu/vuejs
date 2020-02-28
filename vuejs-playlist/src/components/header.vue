@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import {bus} from "../main.js";
 export default {
   props:{
     title:{
@@ -20,7 +21,12 @@ export default {
   methods:{
     changeTitle:function(){
       // fire an event
-      this.$emit('changeTitle','Vue Wizard');
+      //this.$emit('changeTitle','Vue Wizard'); // event name and data to pass
+
+// we are not listening to the event in here we only fire event
+      bus.$emit('titleChange','Vue Wizard'); // emit event into bus
+
+
     }
   }
 
