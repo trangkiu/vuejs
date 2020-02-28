@@ -1,42 +1,41 @@
 <template>
   <div >
-  <app-header v-bind:title="title" v-on:changeTitle="updateTitle($event)"></app-header>
-  <h1>{{title}} </h1>
-  <kiu v-bind:pikachus="pikachus"></kiu>
-  <app-footer v-bind:title="title"></app-footer>
+    <form-helper >
+      <!-- <h2 slot="title">{{title}}</h2>
+      <p slot="text">I am the paragraph </p> -->
+      <div slot="header">
+        <h3>This is the title of the form</h3>
+      </div>
+
+      <div slot="fields">
+      <input type="text" placeholder="name" required/>
+      <input type="password" placeholder="password" required/>
+      </div>
+
+      <div slot="controls">
+        <button v-on:click="handlerSubmit">Submit</button>
+      </div>
+    </form-helper>
   </div>
 
 </template>
 
 <script>
-import Kiu from './components/kiu.vue';
-import Header from './components/header.vue';
-import Footer from './components/footer.vue';
+import formHelper from './components/formHelper.vue';
+
 
 export default {
   components:{
-  'kiu':Kiu,
-  'app-header':Header,
-  'app-footer':Footer
+    'form-helper': formHelper,
   },
 
   data () {
     return {
-    title : 'Kiu app ',
-    pikachus : [
-      {name: 'Ryu', speciality: 'Vue Components', show: false},
-      {name: 'Crystal', speciality: 'HTML Wizardry', show: false},
-      {name: 'Hitoshi', speciality: 'Click Events', show: false},
-      {name: 'Tango', speciality: 'Conditionals', show: false},
-      {name: 'Kami', speciality: 'Webpack', show: false},
-      {name: 'Yoshi', speciality: 'Data Diggin', show: false}
-    ]
+      title: "I am dynamic slot title",
     }
   },
   methods:{
-    updateTitle:function(event){
-      this.title = event;
-    }
+
   }
 
 }
