@@ -6,6 +6,7 @@
         <h3 v-show="pikachu.show">{{pikachu.speciality}}</h3>
       </li>
     </ul>
+    <button v-on:click="deletePika">Delete a pikachu</button>
   </div>
 
 </template>
@@ -30,10 +31,12 @@ export default {
     }
   },
   methods:{
-    test:function(){
-      // we can just access props like we access data
-      this.pikachus
+    deletePika:function(){
+      this.pikachus.pop();
     }
+  },
+  computed:{
+
   }
 
 }

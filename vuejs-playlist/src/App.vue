@@ -1,9 +1,9 @@
 <template>
   <div >
-  <app-header ></app-header>
+  <app-header v-bind:title="title"></app-header>
   <h1>{{title}} </h1>
   <kiu v-bind:pikachus="pikachus"></kiu>
-  <app-footer></app-footer>
+  <app-footer v-bind:title="title"></app-footer>
   </div>
 
 </template>
