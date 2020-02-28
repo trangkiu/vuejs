@@ -1,6 +1,6 @@
 <template>
   <div >
-  <app-header v-bind:title="title"></app-header>
+  <app-header v-bind:title="title" v-on:changeTitle="updateTitle($event)"></app-header>
   <h1>{{title}} </h1>
   <kiu v-bind:pikachus="pikachus"></kiu>
   <app-footer v-bind:title="title"></app-footer>
@@ -31,6 +31,11 @@ export default {
       {name: 'Kami', speciality: 'Webpack', show: false},
       {name: 'Yoshi', speciality: 'Data Diggin', show: false}
     ]
+    }
+  },
+  methods:{
+    updateTitle:function(event){
+      this.title = event;
     }
   }
 

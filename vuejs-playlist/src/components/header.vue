@@ -19,7 +19,8 @@ export default {
   // }
   methods:{
     changeTitle:function(){
-      this.title = "Vue Wizards";
+      // fire an event
+      this.$emit('changeTitle','Vue Wizard');
     }
   }
 
