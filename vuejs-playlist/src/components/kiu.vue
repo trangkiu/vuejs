@@ -14,18 +14,19 @@
 export default {
   // this is the receiving props
   // we define an array with the name of the prop
-  props:['pikachus'],
+  // props:['pikachus'],
+
+  // prop validation
+  props:{
+    pikachus:{
+      type: Array,
+      required:true
+    }
+  },
 
   data () {
     return {
-    // pikachus : [
-    //   {name: 'Ryu', speciality: 'Vue Components', show: false},
-    //   {name: 'Crystal', speciality: 'HTML Wizardry', show: false},
-    //   {name: 'Hitoshi', speciality: 'Click Events', show: false},
-    //   {name: 'Tango', speciality: 'Conditionals', show: false},
-    //   {name: 'Kami', speciality: 'Webpack', show: false},
-    //   {name: 'Yoshi', speciality: 'Data Diggin', show: false}
-    // ]
+
     }
   },
   methods:{
