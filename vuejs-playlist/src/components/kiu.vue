@@ -35,8 +35,24 @@ export default {
       this.pikachus.pop();
     }
   },
-  computed:{
-
+  // life cycle hooks
+  beforeCreate(){
+    alert ('before created');
+  },
+  created(){
+    alert ('created');
+  },
+  beforeMount(){
+    alert (' before mount');
+  },
+  mounted(){
+    alert ('mounted');
+  },
+  beforeUpdate(){
+    alert ('beforeUpdate');
+  },
+  updated(){
+    alert ('updated');
   }
 
 }
